@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import Banner from "../components/banner";
+import Button from "../components/button";
 
 const getRandomIntInclusive = (min, max) => {
   min = Math.ceil(min);
@@ -41,15 +43,10 @@ export default function() {
 
   return (
     <main>
-      <div
-        style={{
-          background: `rgba(0, 0, 0, 0) linear-gradient(to ${rotation}, rgb(${color[0][0]}, ${color[0][1]}, ${color[0][2]}), rgb(${color[1][0]}, ${color[1][1]}, ${color[1][2]}), rgb(${color[2][0]}, ${color[2][1]}, ${color[2][2]})) repeat scroll 0% 0%`
-        }}
-        className="gradient"
-      ></div>
+      <Banner color={color} rotation={rotation} />
       <div>
-        <button onClick={handleClick}>New Gradient</button>
-        <button onClick={updateRotation}>Rotate Gradient</button>
+        <Button handleClick={handleClick} text={"New Gradient"} />
+        <Button handleClick={updateRotation} text={"Rotate Gradient"} />
       </div>
     </main>
   );
