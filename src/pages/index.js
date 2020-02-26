@@ -1,18 +1,15 @@
 import React, { useState } from "react";
+import styled from "styled-components";
+import Layout from "../components/layout";
 import Banner from "../components/banner";
 import Button from "../components/button";
+import { generateRandom } from "../utils/index";
 
-const getRandomIntInclusive = (min, max) => {
-  min = Math.ceil(min);
-  max = Math.floor(max);
-  return Math.floor(Math.random() * (max - min + 1)) + min; //The maximum is inclusive and the minimum is inclusive
-};
-const generateRandom = () => {
-  let number1 = Math.floor(getRandomIntInclusive(0, 255));
-  let number2 = Math.floor(getRandomIntInclusive(0, 255));
-  let number3 = Math.floor(getRandomIntInclusive(0, 255));
-  return [number1, number2, number3];
-};
+const Flex = styled.div`
+  display: flex;
+  justify-content: center;
+  margin-top: 1.5em;
+`;
 
 export default function() {
   const [color, setColor] = useState([
@@ -42,12 +39,12 @@ export default function() {
   };
 
   return (
-    <main>
+    <Layout>
       <Banner color={color} rotation={rotation} />
-      <div>
+      <Flex>
         <Button handleClick={handleClick} text={"New Gradient"} />
         <Button handleClick={updateRotation} text={"Rotate Gradient"} />
-      </div>
-    </main>
+      </Flex>
+    </Layout>
   );
 }
