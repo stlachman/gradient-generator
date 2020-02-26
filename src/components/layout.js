@@ -1,6 +1,7 @@
 import React from "react";
-import { createGlobalStyle } from "styled-components";
+import styled, { createGlobalStyle } from "styled-components";
 import Header from "./header";
+import Footer from "./footer";
 
 const GlobalStyle = createGlobalStyle`
   html {
@@ -18,12 +19,18 @@ const GlobalStyle = createGlobalStyle`
     background-color: #f0f0f0;
   }
 `;
+const Main = styled.main`
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+`;
 export default function({ children }) {
   return (
     <>
       <Header />
       <GlobalStyle />
-      <main>{children}</main>
+      <Main>{children}</Main>
+      <Footer />
     </>
   );
 }
