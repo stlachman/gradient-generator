@@ -1,6 +1,5 @@
 import React, { useState, useRef, useEffect } from "react";
 import styled from "styled-components";
-import SEO from "../components/seo";
 import Layout from "../components/layout";
 import Banner from "../components/banner";
 import Modal from "../components/modal";
@@ -71,7 +70,6 @@ export default function() {
 
   return (
     <>
-      <SEO />
       <Modal show={show} setCopyStatus={setCopyStatus} handleClose={hideModal}>
         {copyStatus ? (
           <Flex>
