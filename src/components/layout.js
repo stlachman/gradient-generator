@@ -1,8 +1,8 @@
 import React from "react";
 import { createGlobalStyle } from "styled-components";
+import Header from "./header";
 
 const GlobalStyle = createGlobalStyle`
-  @import url('https://fonts.googleapis.com/css?family=Spartan&display=swap');
   html {
     box-sizing: border-box;
     font-size: 125%;
@@ -14,12 +14,14 @@ const GlobalStyle = createGlobalStyle`
 
   body {
     margin: 0;
-    font-family: "Spartan", sans-serif
+    font-family: "Spartan", sans-serif;
+    background-color: #f0f0f0;
   }
 `;
 export default function({ children }) {
   return (
     <>
+      <Header />
       <GlobalStyle />
       <main>{children}</main>
     </>

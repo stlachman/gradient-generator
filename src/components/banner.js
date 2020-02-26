@@ -3,7 +3,7 @@ import styled from "styled-components";
 
 const Banner = styled.div`
   display: block;
-  height: 80vh;
+  height: 60vh;
 `;
 
 export default ({ rotation, color }) => {
