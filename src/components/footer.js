@@ -24,7 +24,7 @@ const Link = styled.a`
 export default () => {
   return (
     <Footer>
-      <Title>Gradient Generator</Title>
+      <Title>Cool Wave</Title>
       <Link href="https://github.com/stlachman" target="_blank">
         <IoLogoGithub />
       </Link>

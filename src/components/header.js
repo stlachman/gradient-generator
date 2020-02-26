@@ -23,7 +23,7 @@ const Link = styled.a`
 export default () => {
   return (
     <Header>
-      <Title>Gradient Generator</Title>
+      <Title>Cool Wave</Title>
       <Link href="https://github.com/stlachman" target="_blank">
         <IoLogoGithub />
       </Link>
