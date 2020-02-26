@@ -18,6 +18,7 @@ const Title = styled.h2`
 
 const Link = styled.a`
   color: #2d3748;
+  line-height: 1;
   text-decoration: none;
 `;
 
