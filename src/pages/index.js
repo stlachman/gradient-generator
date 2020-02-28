@@ -100,7 +100,9 @@ export default function() {
         <Banner color={color} gradientType={gradientType} rotation={rotation} />
         <Flex>
           <Button handleClick={newGradient} text={"New Gradient"} />
-          <Button handleClick={updateRotation} text={"Rotate Gradient"} />
+          {gradientType === "linear" ? (
+            <Button handleClick={updateRotation} text={"Rotate Gradient"} />
+          ) : null}
           <Button
             handleClick={toggleGradient}
             text={`Gradient Type: ${gradientType[0].toUpperCase() +
