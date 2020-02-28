@@ -21,10 +21,11 @@ export default function() {
   ]);
   const [rotation, setRotation] = useState("right");
   const [show, setShow] = useState(false);
+  const [gradientType, setGradientType] = useState("linear");
   const [copyStatus, setCopyStatus] = useState("");
   const codeRef = useRef(null);
 
-  const handleClick = e => {
+  const newGradient = e => {
     setColor([generateRandom(), generateRandom(), generateRandom()]);
   };
 
@@ -62,6 +63,14 @@ export default function() {
       });
   }
 
+  const toggleGradient = () => {
+    if (gradientType === "linear") {
+      setGradientType("radial");
+    } else {
+      setGradientType("linear");
+    }
+  };
+
   useEffect(() => {
     setTimeout(() => {
       setCopyStatus("");
@@ -76,17 +85,27 @@ export default function() {
             <h4>{copyStatus}</h4>
           </Flex>
         ) : (
-          <Code codeRef={codeRef} color={color} rotation={rotation} />
+          <Code
+            codeRef={codeRef}
+            color={color}
+            gradientType={gradientType}
+            rotation={rotation}
+          />
         )}
         <Flex>
           <Button small text={"Copy Code"} handleClick={copyToClipboard} />
         </Flex>
       </Modal>
       <Layout>
-        <Banner color={color} rotation={rotation} />
+        <Banner color={color} gradientType={gradientType} rotation={rotation} />
         <Flex>
-          <Button handleClick={handleClick} text={"New Gradient"} />
+          <Button handleClick={newGradient} text={"New Gradient"} />
           <Button handleClick={updateRotation} text={"Rotate Gradient"} />
+          <Button
+            handleClick={toggleGradient}
+            text={`Gradient Type: ${gradientType[0].toUpperCase() +
+              gradientType.slice(1)}`}
+          />
           <Button handleClick={showModal} text={"Show CSS"} />
         </Flex>
       </Layout>

@@ -26,7 +26,11 @@ export default () => {
   return (
     <Footer>
       <Title>Cool Wave</Title>
-      <Link href="https://github.com/stlachman" target="_blank">
+      <Link
+        href="https://github.com/stlachman"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
         <IoLogoGithub />
       </Link>
     </Footer>
